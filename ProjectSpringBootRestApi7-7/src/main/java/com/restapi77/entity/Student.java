@@ -1,12 +1,17 @@
-package com.restapi77entity;
+package com.restapi77.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "StudentInfo")
 public class Student {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "studentId")
 	private int id;
     @Column(name = "studentName")

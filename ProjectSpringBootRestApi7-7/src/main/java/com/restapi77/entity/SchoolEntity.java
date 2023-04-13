@@ -1,4 +1,4 @@
-package com.restapi77entity;
+package com.restapi77.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,19 +11,19 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "School_Information")
+@Table(name = "School")
 public class SchoolEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "School Id")
+	@Column(name = "SchoolId")
 	private int id;
 	@Column(name = "SchoolName")
 	private String name;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "fkT")
+	@JoinColumn(name = "TeacherId")
 	private Teacher teacher;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "fkS")
+	@JoinColumn(name = "studentId")
 	private Student student;
 	public SchoolEntity() {
 		super();
